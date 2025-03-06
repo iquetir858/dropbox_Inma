@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script type="text/javascript" src="https://www.dropbox.com/static/api/2/dropins.js" id="dropboxjs"
+        data-app-key="xxxxxxxxxxxxxxxxx"></script>
+    <link rel="stylesheet" href="https://cdn.simplecss.org/simple.min.css">
+    <title>Proyecto Dropbox</title>
+</head>
+
+<body>
+    <div class="container">
+        <div class="tile is-ancestor">
+            <div class="tile is-parent">
+                <article class="tile is-child box">
+                    <h2 class="title"><a href="https://www.dropbox.com/developers/embedder">Embedder</a></h2>
+                    <p class="subtitle">The Embedder allows you to use shared links to embed previews of Dropbox files
+                        or folders inside your web app.</p>
+                    <div id="content" style="height: 800px;"></div>
+                </article>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        var options = {
+            // Shared link to Dropbox file
+            link: "Enlace a la carpeta a mostrar",
+            file: {
+                // Sets the zoom mode for embedded files. Defaults to 'best'.
+                zoom: "best" // or "fit"
+            },
+            folder: {
+                // Sets the view mode for embedded folders. Defaults to 'list'.
+                view: "grid", // or "list"
+                headerSize: "normal" // or "small"
+            }
+        }
+        let element = document.getElementById('content');
+        Dropbox.embed(options, element);
+    </script>
+</body>
+
+</html>
